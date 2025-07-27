@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - CharityConnect</title>
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            color: #333;
+            transition: background-color 0.5s, color 0.5s;
+            line-height: 1.6;
+        }
+        
+        body.dark-mode {
+            background: linear-gradient(135deg, #1e1e1e, #292929); 
+            color: #f8f9fa;
+        }
+        
+        header {
+        background: linear-gradient(to right, #b3d7f4, rgb(7, 101, 177));
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+        
+        .logo {
+            height: 70px;
+            width: auto;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        nav ul li {
+            margin: 5px 10px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+            font-size: 0.9rem;
+        }
+        
+        nav ul li a:hover {
+            color: #13120c;
+        }
+        
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        section {
+            margin-bottom: 40px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        body.dark-mode section {
+            background: rgba(51, 51, 51, 0.8);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: #01579b;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            color: #0277bd;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #0277bd;
+            padding-bottom: 8px;
+        }
+        
+        body.dark-mode h1,
+        body.dark-mode h2 {
+            color: #4fc3f7;
+        }
+        
+        body.dark-mode h2 {
+            border-bottom-color: #4fc3f7;
+        }
+        
+        p {
+            font-size: 1.05rem;
+            margin-bottom: 15px;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+        
+        strong {
+            color: #0277bd;
+        }
+        
+        body.dark-mode strong {
+            color: #4fc3f7;
+        }
+        
+        .dark-mode-toggle {
+            padding: 6px 12px;
+            border: none;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: bold;
+            background: #333;
+            color: white;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+        
+        .dark-mode-toggle:hover {
+            background: #555;
+        }
+        
+        footer {
+            background: #1b1b1b;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 10px;
+            }
+            
+            .logo {
+                margin-bottom: 10px;
+                height: 60px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            section {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="logo.png" alt="CharityConnect Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="request.html">Request Help</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><button class="dark-mode-toggle" onclick="toggleDarkMode()">Dark Mode</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about-section">
+            <h1>About CharityConnect</h1>
+            <p>At <strong>CharityConnect</strong>, we believe that no act of kindness is too small. Our platform is dedicated to bridging the gap between <strong>generous donors and those in need</strong>, creating a seamless and transparent process to help communities thrive.</p>
+        </section>
+
+        <section class="mission-vision">
+            <h2>Our Mission</h2>
+            <p>Our mission is to build a compassionate world where <strong>every donation makes a direct impact</strong>. We strive to provide a <strong>trustworthy</strong> and <strong>efficient</strong> channel that ensures resources reach the right hands at the right time.</p>
+
+            <h2>Our Vision</h2>
+            <p>We envision a world where <strong>giving is effortless, transparent, and impactful</strong>. Through technology, we aim to connect people with causes that matter, fostering a community of <strong>hope, generosity, and positive change</strong>.</p>
+        </section>
+
+        <section class="what-we-do">
+            <h2>What We Do</h2>
+            <ul>
+                <li><strong>Connect donors</strong> with verified organizations and individuals in need.</li>
+                <li><strong>Ensure transparency</strong> by providing detailed reports on fund allocation.</li>
+                <li><strong>Support various causes</strong>, including education, healthcare, disaster relief, and more.</li>
+                <li><strong>Encourage community participation</strong> through events, volunteering, and awareness campaigns.</li>
+            </ul>
+        </section>
+
+        <section class="impact">
+            <h2>Our Impact</h2>
+            <p>Since our inception, we have facilitated <strong>thousands of donations</strong> across different causes, helping families, students, and disaster victims. Some of our key milestones include:</p>
+            <ul>
+                <li>Over <strong>₹10 Crores</strong> raised for charitable causes.</li>
+                <li>More than <strong>50,000 lives impacted</strong> through our platform.</li>
+                <li><strong>500+ NGOs partnered</strong> with us to amplify our reach.</li>
+                <li>Initiatives in <strong>education, healthcare, and food distribution</strong> across India.</li>
+            </ul>
+        </section>
+
+        <section class="why-choose-us">
+            <h2>Why Choose CharityConnect?</h2>
+            <p>We know that when it comes to donations, trust and impact matter the most. Here's why <strong>CharityConnect</strong> is the best platform for your contributions:</p>
+            <ul>
+                <li><strong>Transparency</strong> – Every rupee donated is tracked and accounted for.</li>
+                <li> <strong>Quick & Easy Process</strong> – Seamless donation options via multiple payment methods.</li>
+                <li><strong>Verified Beneficiaries</strong> – We ensure your donations reach genuine, needy individuals.</li>
+                <li><strong>Sustainable Solutions</strong> – We support long-term programs that create lasting change.</li>
+            </ul>
+        </section>
+
+        <section class="get-involved">
+            <h2>Get Involved</h2>
+            <p>Want to be a part of something bigger? Join us in making a difference!</p>
+            <ul>
+                <li> <strong>Become a donor</strong> – Support causes that align with your values.</li>
+                <li><strong>Volunteer</strong> – Give your time to meaningful projects.</li>
+                <li><strong>Spread the word</strong> – Help us reach more people by sharing our mission.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 CharityConnect | All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+            const darkModeBtn = document.querySelector(".dark-mode-toggle");
+
+            if (document.body.classList.contains("dark-mode")) {
+                darkModeBtn.textContent = "Light Mode";
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                darkModeBtn.textContent = "Dark Mode";
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        }
+
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.body.classList.add('dark-mode');
+            document.querySelector('.dark-mode-toggle').textContent = "Light Mode";
+        }
+    </script>
+</body>
+</html>

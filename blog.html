@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - CharityConnect</title>
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            color: #333;
+            transition: background-color 0.5s, color 0.5s;
+            line-height: 1.6;
+        }
+        
+        body.dark-mode {
+            background: linear-gradient(135deg, #1e1e1e, #292929); 
+            color: #f8f9fa;
+        }
+        
+        header {
+            background: linear-gradient(to right, #b3d7f4, rgb(7, 101, 177));
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            height: 70px;
+            width: auto;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        nav ul li {
+            margin: 5px 10px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+            font-size: 0.9rem;
+        }
+        
+        nav ul li a:hover {
+            color: #13120c;
+        }
+        
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .blog {
+            padding: 20px 0;
+        }
+        
+        .blog h1 {
+            font-size: 2.5rem;
+            color: #01579b;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        body.dark-mode .blog h1 {
+            color: #4fc3f7;
+        }
+        
+        .post {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        body.dark-mode .post {
+            background: rgba(51, 51, 51, 0.9);
+        }
+        
+        .post:hover {
+            transform: translateY(-5px);
+        }
+        
+        .post h2 {
+            font-size: 1.6rem;
+            color: #0277bd;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        body.dark-mode .post h2 {
+            color: #4fc3f7;
+        }
+        
+        .post p {
+            font-size: 1.05rem;
+            margin-bottom: 15px;
+        }
+        
+        .post i {
+            color: #666;
+            font-size: 0.95rem;
+            display: block;
+            margin-bottom: 15px;
+        }
+        
+        body.dark-mode .post i {
+            color: #aaa;
+        }
+        
+        .extra-content {
+            display: none;
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+            margin-top: 15px;
+        }
+        
+        body.dark-mode .extra-content {
+            border-top-color: #444;
+        }
+        
+        .read-more-btn {
+            background: #0277bd;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: "Poppins", sans-serif;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        
+        .read-more-btn:hover {
+            background: #01579b;
+        }
+        
+        footer {
+            background: #1b1b1b;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .dark-mode-toggle {
+            padding: 6px 12px;
+            border: none;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: bold;
+            background: #333;
+            color: white;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+        
+        .dark-mode-toggle:hover {
+            background: #555;
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 10px;
+            }
+            
+            .logo {
+                margin-bottom: 10px;
+                height: 60px;
+            }
+            
+            .blog h1 {
+                font-size: 2rem;
+            }
+            
+            .post {
+                padding: 20px;
+            }
+            
+            .post h2 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="logo.png" alt="CharityConnect Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="request.html">Request Help</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><button class="dark-mode-toggle" onclick="toggleDarkMode()">Dark Mode</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="blog">
+            <h1>Our Blog</h1>
+
+            <div class="post">
+                <h2>The Power of Small Donations</h2>
+                <p><i>March 20, 2025</i></p>
+                <p>Many people believe that small donations don't make a difference, but nothing could be further from the truth.</p>
+                <div class="extra-content"><p>A ₹50 donation from one person may not seem like much, but when multiplied by thousands of donors, it can fund critical projects, from providing school supplies to building fresh water wells. Micro-donations have fueled several of our initiatives, ensuring that underprivileged communities receive the help they need. The key is consistency—regular, small contributions make long-term projects sustainable.</p></div>
+                <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+            </div>
+
+            <div class="post">
+                <h2>How Education Transforms Lives</h2>
+                <p><i>March 15, 2025</i></p>
+                <p>Access to quality education is a fundamental right, yet millions of children around the world are deprived of it. Education doesn't just provide knowledge—it opens doors to opportunities, breaking the cycle of poverty.</p>
+                <div class="extra-content"><p>Through our educational programs, we've provided books, school uniforms, and scholarships to hundreds of children. One such success story is Priya, a young girl who, thanks to our donors, went from working as a domestic helper to securing a spot in a top engineering college.</p>
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+            </div>
+
+            <div class="post">
+                <h2>Volunteer Stories: Making a Difference</h2>
+                <p><i>March 10, 2025</i></p>
+                <p>Meet Raj, a software engineer who volunteers every weekend to teach coding to underprivileged students. His classes have helped students develop skills that will enable them to secure better career opportunities.</p>
+                <div class="extra-content"><p>Similarly, Sneha, a retired teacher, spends her evenings tutoring children from slums, ensuring they don't fall behind in school. These volunteers prove that making a difference is not about money—it's about dedication and passion.</p>
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+            </div>
+
+            <div class="post">
+                <h2>Food and Nutrition for the Homeless</h2>
+                <p><i>March 5, 2025</i></p>
+                <p>One in ten people go to bed hungry every night, and we're determined to change that.</p>
+                <div class="extra-content"><p>Our meal distribution program has provided over 50,000 meals in the past year, ensuring that the homeless and needy have access to nutritious food. With the help of local restaurants and food donors, we've also launched initiatives to reduce food waste and direct surplus meals to those in need.</p>
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+            </div>
+
+            <div class="post">
+                <h2>Women Empowerment Through Skill Training</h2>
+                <p><i>February 28, 2025</i></p>
+                <p>Empowering women means empowering communities. Our skill development program has trained over 500 women in tailoring, handicrafts, and digital literacy, enabling them to become financially independent.</p>
+                <div class="extra-content"><p>One inspiring story is that of Meera, a mother of two who, after completing our tailoring course, started her own boutique. Today, she employs five other women and provides free training to those in need.</p>
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+            </div>
+            
+            <div class="post">
+                <h2>Building Homes, Building Hope</h2>
+                <p><i>February 18, 2025</i></p>
+                <p>Many families still live in unsafe and unhygienic conditions. Our housing initiative has successfully built 20 new homes for underprivileged families in rural areas, providing them with a safe place to live.</p>
+                <div class="extra-content"><p>With the support of volunteers and donations, we've also renovated schools, community centers, and orphanages, ensuring a better quality of life for those in need.</p>
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 CharityConnect | All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+            const darkModeBtn = document.querySelector(".dark-mode-toggle");
+
+            if (document.body.classList.contains("dark-mode")) {
+                darkModeBtn.textContent = "Light Mode";
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                darkModeBtn.textContent = "Dark Mode";
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        }
+
+        function toggleReadMore(button) {
+            const post = button.parentElement;
+            const extraContent = post.querySelector(".extra-content");
+
+            if (extraContent.style.display === "none" || extraContent.style.display === "") {
+                extraContent.style.display = "block";
+                button.textContent = "Read Less";
+            } else {
+                extraContent.style.display = "none";
+                button.textContent = "Read More";
+            }
+        }
+
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.body.classList.add('dark-mode');
+            document.querySelector('.dark-mode-toggle').textContent = "Light Mode";
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const extraContents = document.querySelectorAll('.extra-content');
+            extraContents.forEach(content => {
+                content.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>

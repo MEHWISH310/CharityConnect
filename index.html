@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CharityConnect - Bridging Hearts, Changing Lives</title>
+    <style>
+    body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+        color: #333;
+        transition: background-color 0.5s, color 0.5s;
+    }
+    
+    body.dark-mode {
+        background: linear-gradient(135deg, #1e1e1e, #292929); 
+        color: #f8f9fa;
+    }
+    
+    header {
+        background: linear-gradient(to right, #b3d7f4, rgb(7, 101, 177));
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .logo {
+        height: 90px;
+        width: auto;
+    }
+    
+    nav ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+    }
+    
+    nav ul li {
+        margin: 0 15px;
+    }
+    
+    nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        transition: color 0.3s, transform 0.2s;
+    }
+    
+    nav ul li a:hover {
+        color: #13120c;
+        transform: scale(1.2);
+    }
+    
+    .hero {
+        text-align: center;
+        padding: 20px 20px;
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .hero h1 {
+        font-size: 2.8rem;
+        margin-bottom: 10px;
+        color: #01579b;
+    }
+    
+    .hero p {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto 30px;
+    }
+    
+    .btn {
+        display: inline-block;
+        background: #0277bd;
+        color: white;
+        padding: 12px 30px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.1rem;
+        transition: transform 0.3s, box-shadow 0.3s;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    
+    .btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    }
+    
+    .announcement {
+        background: rgb(66, 151, 221);
+        color: rgb(247, 242, 242);
+        padding: 15px;
+        padding:20px 20px;
+        text-align: center;
+        font-weight: bold;
+    }
+    
+    .mission {
+        padding: 20px 20px;
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    
+    .mission h2 {
+        font-size: 2.2rem;
+        color: #01579b;
+        margin-bottom: 20px;
+    }
+    
+    .mission p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+    
+    .success-stories {
+        text-align: center;
+        background: #f5f5f5;
+    }
+    
+    .success-stories h2 {
+        font-size: 2.2rem;
+        color: #01579b;
+        margin-bottom: 40px;
+        margin-top:10px;
+    }
+    
+    .stories-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .story {
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+    }
+    
+    .story:hover {
+        transform: translateY(-5px);
+    }
+    
+    img {
+    max-width: 100%;
+}
+
+    
+    .how-to-help {
+        padding: 20px 20px;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .how-to-help h2 {
+        font-size: 2.2rem;
+        color: #01579b;
+        margin-bottom: 30px;
+    }
+    
+    .how-to-help ul {
+        text-align: left;
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    .how-to-help li {
+        margin-bottom: 15px;
+        padding-left: 25px;
+        position: relative;
+        line-height: 1.6;
+    }
+    
+    .how-to-help li:before {
+        content: "✓";
+        color: #0277bd;
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+    }
+    
+    .events {
+        padding: 20px 20px;
+        text-align: center;
+        background: #e3f2fd;
+    }
+    
+    .events h2 {
+        font-size: 2.2rem;
+        color: #01579b;
+        margin-bottom: 30px;
+    }
+    
+    .events ul {
+        list-style-type: none;
+        padding: 0;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .events li {
+        margin-bottom: 15px;
+        padding: 15px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .newsletter {
+        padding: 60px 20px;
+        text-align: center;
+    }
+    
+    .newsletter h2 {
+        font-size: 2.2rem;
+        color: #01579b;
+        margin-bottom: 20px;
+    }
+    
+    .newsletter form {
+        max-width: 500px;
+        margin: 0 auto;
+        display: flex;
+        gap: 10px;
+    }
+    
+    .newsletter input {
+        flex: 1;
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        border-radius: 50px;
+        font-family: "Poppins", sans-serif;
+    }
+    
+    .newsletter button {
+        background: #0277bd;
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 50px;
+        cursor: pointer;
+        font-family: "Poppins", sans-serif;
+        font-weight: bold;
+        transition: background 0.3s;
+    }
+    
+    .newsletter button:hover {
+        background: #01579b;
+    }
+    
+    footer {
+        background: #1b1b1b;
+        color: white;
+        text-align: center;
+        padding: 30px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .social-icons {
+        margin-top: 20px;
+    }
+    
+    .footer-link {
+        color: white;
+        text-decoration: none;
+        margin: 0 10px;
+        transition: color 0.3s;
+    }
+    
+    .footer-link:hover {
+        color: #b7c5f0;
+    }
+    
+    .dark-mode-toggle {
+        padding: 8px 15px;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+        background: #333;
+        color: white;
+        border-radius: 5px;
+        transition: background 0.3s;
+    }
+    
+    .dark-mode-toggle:hover {
+        background: #555;
+    }
+    body.dark-mode .hero h1,
+    body.dark-mode .mission h2,
+    body.dark-mode .success-stories h2,
+    body.dark-mode .how-to-help h2,
+    body.dark-mode .events h2,
+    body.dark-mode .newsletter h2 {
+        color: #4fc3f7;
+    }
+    
+    body.dark-mode .story,
+    body.dark-mode .events li {
+        background: #333;
+        color: #f8f9fa;
+    }
+    
+    body.dark-mode .how-to-help li:before {
+        color: #4fc3f7;
+    }
+    
+    body.dark-mode .success-stories,
+    body.dark-mode .events {
+        background: #292929;
+    }
+    
+    @media (max-width: 768px) {
+        nav ul {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2rem;
+        }
+        
+        .newsletter form {
+            flex-direction: column;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="logo.png" alt="CharityConnect Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="request.html">Request Help</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><button class="dark-mode-toggle" onclick="toggleDarkMode()">Dark Mode</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Connecting Generous Hearts with Those in Need</h1> 
+            <p>Every act of kindness has the power to change lives. Whether it's through a donation, volunteering your time, or simply spreading the word, your support brings hope and help to those facing difficult times. Join us in creating a compassionate community where generosity meets genuine need. Together, we can light up someone’s world - with one heartfelt gesture at a time.</p>
+            <a href="donate.html" class="btn">Donate Now</a><br><br>
+        </section>
+
+        <marquee class="announcement">Help us reach our goal: ₹1,00,000 for children's education!</marquee>
+
+        <section class="mission">
+            <h2>Our Mission</h2>
+            <p>We believe in making a difference by connecting donors with those in need. From <b>education</b> to <b>healthcare</b>, your support changes lives.</p>
+        </section>
+
+        <section class="success-stories">
+            <br><br>
+            <h2>Success Stories</h2>
+            <div class="stories-container">
+                <div class="story">
+                    <h3>Empowering Children Through Education</h3>
+                    <img src="story1.jpg" alt="Education Support">
+                    <p>With your generous donations, we have provided quality education to <b>500+ underprivileged children</b> this year.  
+                    Your support ensures they get access to school supplies, books, and mentorship programs.  
+                    <i>Education is the key to breaking the cycle of poverty!</i></p>
+                </div>
+                <div class="story">
+                    <h3>Rebuilding Lives After Disaster</h3>
+                    <img src="story2.jpg" alt="Flood Relief Aid" width="520">
+                    <p>After a devastating flood, our emergency relief efforts helped over <b>2,000 families</b> rebuild their homes and lives.  
+                    Your contributions provided essential supplies, medical care, and shelter.  
+                    <i>Every rupee you donate brings hope to those in need!</i></p>
+                </div>
+            </div>
+            <br><br>
+        </section>
+
+        <section class="how-to-help">
+            <h2>How You Can Help</h2>
+            <ul>
+                <li><b>Donate Funds</b> – Support critical needs like food, education & medical aid.</li>
+                <li><b>Volunteer</b> – Join hands with us to make a real impact.</li>
+                <li><b>Sponsor a Child</b> – Ensure a brighter future for underprivileged children.</li>
+                <li><b>Share Our Cause</b> – Spread awareness and encourage more contributions.</li>
+            </ul>
+        </section>
+
+        <section class="events">
+            <h2>Upcoming Events</h2>
+            <p>Join us in making a difference! Mark your calendars for these upcoming charity events:</p>
+            <ul>
+                <li><b>April 10, 2025</b> - Food Distribution Drive (Mumbai)</li>
+                <li><b>April 15, 2025</b> - Health Camp for Senior Citizens (Delhi)</li>
+                <li><b>May 5, 2025</b> - Fundraising Gala Night (Bangalore)</li>
+            </ul>
+        </section>
+
+        <section class="newsletter">
+            <h2>📩 Stay Updated</h2>
+            <p>Subscribe to our newsletter to get updates on new campaigns and success stories.</p>
+            <form id="newsletterForm">
+                <input type="email" id="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 CharityConnect | All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/" class="footer-link">Facebook</a> | 
+            <a href="https://www.instagram.com/" class="footer-link">Instagram</a> | 
+            <a href="https://x.com/?lang=en" class="footer-link">Twitter</a>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("newsletterForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const email = document.getElementById("email").value.trim();
+            
+            if (!email) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+
+            alert("Thank you for subscribing! You'll receive our latest updates soon.");
+            document.getElementById("email").value = "";
+        });
+
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+            const darkModeBtn = document.querySelector(".dark-mode-toggle");
+
+            if (document.body.classList.contains("dark-mode")) {
+                darkModeBtn.textContent = "Light Mode";
+            } else {
+                darkModeBtn.textContent = "Dark Mode";
+            }
+        }
+    </script>
+
+</body>
+</html>

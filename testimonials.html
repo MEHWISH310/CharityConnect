@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CharityConnect - Testimonials</title>
+
+    <style>
+    body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+        color: #333;
+        transition: background-color 0.5s, color 0.5s;
+    }
+    
+    body.dark-mode {
+        background: linear-gradient(135deg, #1e1e1e, #292929); 
+        color: #f8f9fa;
+    }
+    
+    header {
+        background: linear-gradient(to right, #b3d7f4, rgb(7, 101, 177));
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .logo {
+        height: 90px;
+        width: auto;
+    }
+    
+    nav ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+    }
+    
+    nav ul li {
+        margin: 0 15px;
+    }
+    
+    nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        transition: color 0.3s, transform 0.2s;
+    }
+    
+    nav ul li a:hover {
+        color: #13120c;
+        transform: scale(1.2);
+    }
+    
+    .testimonial-section {
+        padding: 50px 20px;
+        text-align: center;
+    }
+    
+    .testimonial-section h2 {
+        font-size: 2.2rem;
+        margin-bottom: 25px;
+        color: #01579b;
+    }
+    
+    .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        padding: 20px;
+    }
+    
+    .testimonial-card {
+        background: #ffffff;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        text-align: left;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .testimonial-card h3 {
+        margin: 10px 0 8px;
+        font-size: 1.3rem;
+        color: #0277bd;
+    }
+    
+    .testimonial-card p {
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #444;
+    }
+    
+    .testimonial-card::before {
+        content: "";
+        position: absolute;
+        width: 100px;
+        height: 80px;
+        background: rgba(252, 160, 218, 0.3);
+        border-radius: 50%;
+        top: -20px;
+        left: -20px;
+        opacity: 0.5;
+        transition: transform 0.3s ease;
+    }
+    
+    .testimonial-card:hover::before {
+        transform: scale(1.2);
+    }
+    
+    body.dark-mode .testimonial-card {
+        background: #333;
+        color: #f8f9fa;
+    }
+    body.dark-mode .testimonial-card h3{
+        margin: 10px 0 8px;
+        font-size: 1.3rem;
+        color: rgb(234, 81, 99);
+    }
+    body.dark-mode .testimonial-card p {
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #fbf9f9;
+    }
+    body.dark-mode .testimonial-section h2 {
+        font-size: 2.2rem;
+        margin-bottom: 25px;
+        color: #4fc3f7;
+    }
+    
+    footer {
+        background: #1b1b1b;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        font-size: 0.9rem;
+    }
+    
+    .dark-mode-toggle {
+        padding: 8px 15px;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+        background: #333;
+        color: white;
+        border-radius: 5px;
+        transition: background 0.3s;
+    }
+    
+    .dark-mode-toggle:hover {
+        background: #555;
+    }
+    
+    @media (max-width: 768px) {
+        nav ul {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="logo.png" alt="CharityConnect Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="request.html">Request Help</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><button class="dark-mode-toggle" onclick="toggleDarkMode()">Dark Mode</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="testimonial-section">
+            <h2>Donor Testimonials</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <h3>Amit Mehra</h3>
+                    <p>"When I made my first donation, I was unsure how much impact I could make. But when I received a letter from a student who was able to buy school supplies because of my contribution, I was overwhelmed. CharityConnect ensures that every penny is used for the right cause. I now donate regularly, knowing that I am making a real difference in someone's life."</p>
+                </div>
+                <div class="testimonial-card">
+                    <h3>Priya Sharma</h3>
+                    <p>"I always wanted to give back but never knew how. CharityConnect made it so easy! The transparency they maintain, the regular updates, and seeing actual families being helped with my contribution – it's beyond fulfilling. I highly recommend supporting their cause!"</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonial-section">
+            <h2>Beneficiary Stories</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <h3>Rahul Kumar</h3>
+                    <p>"Growing up in a low-income family, affording school fees was a constant struggle. My parents tried their best, but it wasn't enough. CharityConnect changed everything. Their educational support program covered my school expenses, and today, I am pursuing my dream of becoming an engineer. Without their help, I wouldn’t have had this opportunity."</p>
+                </div>
+                <div class="testimonial-card">
+                    <h3>Sunita Devi</h3>
+                    <p>"When my husband lost his job, we had no idea how we would feed our children. CharityConnect provided us with essential groceries and financial support during those tough months. That act of kindness gave us the strength to move forward, and today, my husband has a stable job again. This organization truly cares!"</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonial-section">
+            <h2>Volunteer Experiences</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <h3>Rajesh Verma</h3>
+                    <p>"Volunteering at CharityConnect has been a life-changing experience. From organizing fundraising events to distributing food packages, every moment has been rewarding. Seeing smiles on the faces of those we help is worth more than anything. If you're thinking about volunteering, do it – you won’t regret it!"</p>
+                </div>
+                <div class="testimonial-card">
+                    <h3>Ananya Kapoor</h3>
+                    <p>"I joined CharityConnect as a volunteer two years ago, and it has been the most fulfilling journey. Working directly with children in need, mentoring them, and seeing their progress – it’s priceless. Every little effort counts, and together, we can make a huge impact."</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 CharityConnect | All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+            const darkModeBtn = document.querySelector(".dark-mode-toggle");
+
+            if (document.body.classList.contains("dark-mode")) {
+                darkModeBtn.textContent = "Light Mode";
+            } else {
+                darkModeBtn.textContent = "Dark Mode";
+            }
+        }
+    </script>
+
+</body>
+</html>

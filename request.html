@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CharityConnect - Request Help</title>
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            color: #333;
+            transition: background-color 0.5s, color 0.5s;
+            line-height: 1.6;
+        }
+        
+        body.dark-mode {
+            background: linear-gradient(135deg, #1e1e1e, #292929); 
+            color: #f8f9fa;
+        }
+        
+        header {
+            background: linear-gradient(to right, #0277bd, #01579b);
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            height: 70px;
+            width: auto;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            margin: 0;
+            align-items: center;
+        }
+        
+        nav ul li {
+            margin: 0 12px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+        
+        nav ul li a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        nav ul li a.active {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .dark-mode-toggle {
+            background: #333;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .dark-mode-toggle:hover {
+            background: #555;
+        }
+        
+        body.dark-mode .dark-mode-toggle {
+            background: #555;
+            color: white;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #0288d1, #01579b);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+            opacity: 0.2;
+            z-index: 0;
+            animation: zoomInOut 20s infinite alternate;
+        }
+        
+        @keyframes zoomInOut {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+        
+        .hero > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+        
+        .request-form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+        
+        body.dark-mode .request-form {
+            background: #1e1e1e;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .request-form h2 {
+            color: #01579b;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+        
+        body.dark-mode .request-form h2 {
+            color: #4fc3f7;
+        }
+        
+        form {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+            color: #333;
+        }
+        
+        body.dark-mode label {
+            color: #e0e0e0;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: "Poppins", sans-serif;
+        }
+        
+        body.dark-mode input,
+        body.dark-mode select,
+        body.dark-mode textarea {
+            background: #333;
+            border-color: #444;
+            color: white;
+        }
+        
+        button[type="submit"] {
+            background: #0277bd;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: "Poppins", sans-serif;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+            margin-top: 10px;
+        }
+        
+        button[type="submit"]:hover {
+            background: #01579b;
+        }
+
+        .eligibility {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+        
+        body.dark-mode .eligibility {
+            background: #292929;
+        }
+        
+        .eligibility h2 {
+            color: #01579b;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        body.dark-mode .eligibility h2 {
+            color: #4fc3f7;
+        }
+        
+        .eligibility ul {
+            list-style: none;
+            padding: 0;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .eligibility li {
+            padding: 10px 0;
+            font-size: 1.1rem;
+            position: relative;
+            padding-left: 35px;
+        }
+        
+        .eligibility li:before {
+            content: "✔️";
+            position: absolute;
+            left: 0;
+            color: #2e7d32;
+        }
+        
+        body.dark-mode .eligibility li:before {
+            color: #81c784;
+        }
+
+        .faq {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        body.dark-mode .faq {
+            background: #1e1e1e;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .faq h2 {
+            color: #01579b;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+        
+        body.dark-mode .faq h2 {
+            color: #4fc3f7;
+        }
+        
+        details {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+        
+        body.dark-mode details {
+            background: #292929;
+        }
+        
+        summary {
+            font-weight: 600;
+            cursor: pointer;
+            color: #0277bd;
+        }
+        
+        body.dark-mode summary {
+            color: #4fc3f7;
+        }
+        
+        details p {
+            margin-top: 10px;
+            color: #555;
+        }
+        
+        body.dark-mode details p {
+            color: #b0b0b0;
+        }
+
+        footer {
+            background: #1b1b1b;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.9rem;
+        }
+        
+        body.dark-mode footer {
+            background: #000;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 15px;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 5px 8px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .request-form, .eligibility, .faq {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="CharityConnect Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="request.html" class="active">Request Help</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><button class="dark-mode-toggle" onclick="toggleDarkMode()">Dark Mode</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Need Assistance? We Are Here to Help</h1>
+            <p>Fill out the form below to request help from our community support network.</p>
+        </section>
+
+        <section class="request-form">
+            <h2>Request Help Form</h2>
+            <form id="helpRequestForm">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="type">Type of Assistance Needed:</label>
+                <select id="type" name="type" required>
+                    <option value="">Select an option</option>
+                    <option value="food">Food Assistance</option>
+                    <option value="medical">Medical Aid</option>
+                    <option value="education">Education Support</option>
+                    <option value="shelter">Shelter/Housing</option>
+                    <option value="financial">Financial Assistance</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="details">Describe Your Situation:</label>
+                <textarea id="details" name="details" rows="4" required></textarea>
+
+                <button type="submit">Submit Request</button>
+            </form>
+        </section>
+
+        <section class="eligibility">
+            <h2>Eligibility Criteria</h2>
+            <ul>
+                <li>Must be in genuine need of assistance</li>
+                <li>Proof of financial hardship may be required</li>
+                <li>Assistance availability depends on donations and funding</li>
+                <li>Priority given to families with children and seniors</li>
+                <li>Must be willing to provide necessary documentation</li>
+            </ul>
+        </section>
+
+        <section class="faq">
+            <h2>Frequently Asked Questions</h2>
+            <details>
+                <summary>How long does it take to get assistance?</summary>
+                <p>Processing time varies based on the type of assistance requested, but we strive to respond to all requests within 5-7 business days. Emergency requests may be processed faster.</p>
+            </details>
+            <details>
+                <summary>Do I need to provide proof of my situation?</summary>
+                <p>For certain types of assistance (especially financial aid), we may require documentation such as proof of income, medical bills, or other relevant documents to verify your need.</p>
+            </details>
+            <details>
+                <summary>Is there a limit to how often I can request help?</summary>
+                <p>Yes, to ensure we can help as many people as possible, we typically limit assistance to once every 3 months for non-emergency requests, unless special circumstances apply.</p>
+            </details>
+            <details>
+                <summary>What if my request is denied?</summary>
+                <p>If your request is denied, we will provide information about other organizations that may be able to help. You may also reapply after 30 days if your situation changes.</p>
+            </details>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 CharityConnect | All rights reserved.</p>
+        <p>Contact us at: help@charityconnect.org | Phone: 1-800-HELP-NOW</p>
+    </footer>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+            const darkModeBtn = document.querySelector(".dark-mode-toggle");
+            
+            if (document.body.classList.contains("dark-mode")) {
+                darkModeBtn.textContent = "Light Mode";
+                localStorage.setItem("darkMode", "enabled");
+            } else {
+                darkModeBtn.textContent = "Dark Mode";
+                localStorage.setItem("darkMode", "disabled");
+            }
+        }
+
+        if (localStorage.getItem("darkMode") === "enabled") {
+            document.body.classList.add("dark-mode");
+            document.querySelector(".dark-mode-toggle").textContent = "Light Mode";
+        }
+
+        document.getElementById("helpRequestForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            alert("Thank you for your request. We've received your information and will contact you within 3-5 business days.");
+            this.reset();
+        });
+    </script>
+</body>
+</html>
